@@ -1,8 +1,6 @@
 package kz.aidar.dostap.presentation.models
 
-import org.jetbrains.compose.resources.DrawableResource
-
-data class EventCard(
+data class EventCardData(
     val title: String,
     val description: String,
     val date: String,

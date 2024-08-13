@@ -2,7 +2,6 @@ package kz.aidar.dostap.presentation.screens.bottom_sheets
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -26,11 +25,11 @@ import dostap.composeapp.generated.resources.calendar
 import dostap.composeapp.generated.resources.chats_tab_icon
 import dostap.composeapp.generated.resources.right_arrow_head
 import dostap.composeapp.generated.resources.upload_button
-import kz.aidar.dostap.presentation.auth_components.PrimaryButton
-import kz.aidar.dostap.presentation.models.EventCard
+import kz.aidar.dostap.presentation.components.PrimaryButton
+import kz.aidar.dostap.presentation.models.EventCardData
 import org.jetbrains.compose.resources.painterResource
 
-class JoinEventBottomSheet(eventCard: EventCard):Screen {
+class JoinEventBottomSheet(eventCard: EventCardData):Screen {
     val localEvent = eventCard
     @Composable
     override fun Content() {

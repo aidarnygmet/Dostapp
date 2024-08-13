@@ -23,10 +23,10 @@ import dostap.composeapp.generated.resources.arrow_right
 import dostap.composeapp.generated.resources.clear
 import dostap.composeapp.generated.resources.gender
 import dostap.composeapp.generated.resources.user
-import kz.aidar.dostap.presentation.auth_components.LabelText
-import kz.aidar.dostap.presentation.auth_components.PrimaryButton
-import kz.aidar.dostap.presentation.auth_components.PrimaryTextInput
-import kz.aidar.dostap.presentation.auth_components.RegistrationScreenTemplate
+import kz.aidar.dostap.presentation.components.LabelText
+import kz.aidar.dostap.presentation.components.PrimaryButton
+import kz.aidar.dostap.presentation.components.PrimaryTextInput
+import kz.aidar.dostap.presentation.components.RegistrationScreenTemplate
 
 class AdditionalInfoScreen:Screen {
     @Composable

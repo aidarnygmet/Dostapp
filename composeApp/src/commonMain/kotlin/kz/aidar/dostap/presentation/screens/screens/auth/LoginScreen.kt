@@ -3,6 +3,8 @@ package kz.aidar.dostap.presentation.screens.screens.auth
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.text.ClickableText
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
@@ -12,9 +14,15 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
+import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.currentOrThrow
@@ -23,11 +31,11 @@ import dostap.composeapp.generated.resources.arrow_right
 import dostap.composeapp.generated.resources.clear
 import dostap.composeapp.generated.resources.email
 import dostap.composeapp.generated.resources.password
-import kz.aidar.dostap.presentation.auth_components.LabelText
-import kz.aidar.dostap.presentation.auth_components.PrimaryButton
-import kz.aidar.dostap.presentation.auth_components.PrimaryTextInput
-import kz.aidar.dostap.presentation.auth_components.RegistrationScreenTemplate
-import kz.aidar.dostap.presentation.auth_components.SecondaryButton
+import kz.aidar.dostap.presentation.components.LabelText
+import kz.aidar.dostap.presentation.components.PrimaryButton
+import kz.aidar.dostap.presentation.components.PrimaryTextInput
+import kz.aidar.dostap.presentation.components.RegistrationScreenTemplate
+import kz.aidar.dostap.presentation.components.SecondaryButton
 import kz.aidar.dostap.presentation.screens.screens.MainScreen
 
 class LoginScreen:Screen {
@@ -78,6 +86,22 @@ class LoginScreen:Screen {
                         }
                     },
                     visualTransformation = passwordVisualTransformation)
+                ClickableText(
+                    text = buildAnnotatedString {
+                        withStyle(
+                            style = SpanStyle(
+                                textDecoration = TextDecoration.Underline,
+                                color = MaterialTheme.colors.primary,
+                                fontSize = 16.sp,
+                                fontWeight = FontWeight.Bold
+                            )
+                        ){
+                            append("Forgot password?")
+                        }
+                    }
+                ){
+
+                }
 
         },
             bottomPart = {

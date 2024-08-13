@@ -55,14 +55,14 @@ import dostap.composeapp.generated.resources.upload_button
 import dostap.composeapp.generated.resources.user
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.format.char
-import kz.aidar.dostap.presentation.auth_components.PrimaryButton
-import kz.aidar.dostap.presentation.auth_components.SecondaryButton
-import kz.aidar.dostap.presentation.main_screen_components.InfoCard
-import kz.aidar.dostap.presentation.models.EventCard
+import kz.aidar.dostap.presentation.components.InfoCard
+import kz.aidar.dostap.presentation.components.PrimaryButton
+import kz.aidar.dostap.presentation.components.SecondaryButton
+import kz.aidar.dostap.presentation.models.EventCardData
 import kz.aidar.dostap.presentation.screens.bottom_sheets.JoinEventBottomSheet
 import org.jetbrains.compose.resources.painterResource
 
-class ExpandedEventScreen(eventCard: EventCard, primaryNavigator: Navigator): Screen {
+class ExpandedEventScreen(eventCard: EventCardData, primaryNavigator: Navigator): Screen {
     private val localEvent = eventCard.copy()
     private val navigator = primaryNavigator
     @OptIn(ExperimentalMaterialApi::class)

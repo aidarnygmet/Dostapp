@@ -31,10 +31,10 @@ import dostap.composeapp.generated.resources.clear
 import dostap.composeapp.generated.resources.email
 import dostap.composeapp.generated.resources.password
 import dostap.composeapp.generated.resources.password_visible
-import kz.aidar.dostap.presentation.auth_components.LabelText
-import kz.aidar.dostap.presentation.auth_components.PrimaryButton
-import kz.aidar.dostap.presentation.auth_components.PrimaryTextInput
-import kz.aidar.dostap.presentation.auth_components.RegistrationScreenTemplate
+import kz.aidar.dostap.presentation.components.LabelText
+import kz.aidar.dostap.presentation.components.PrimaryButton
+import kz.aidar.dostap.presentation.components.PrimaryTextInput
+import kz.aidar.dostap.presentation.components.RegistrationScreenTemplate
 import kz.aidar.dostap.presentation.screens.screens.auth.AdditionalInfoScreen
 
 class RegistrationScreen: Screen {

@@ -42,13 +42,14 @@ import dostap.composeapp.generated.resources.my_events
 import dostap.composeapp.generated.resources.puzzle
 import dostap.composeapp.generated.resources.search
 import dostap.composeapp.generated.resources.standup
-import kz.aidar.dostap.presentation.main_screen_components.EventCard
-import kz.aidar.dostap.presentation.main_screen_components.SeeAll
-import kz.aidar.dostap.presentation.models.EventCard
+import kz.aidar.dostap.presentation.components.EventCard
+import kz.aidar.dostap.presentation.components.SecondaryButton
+import kz.aidar.dostap.presentation.components.SeeAll
+import kz.aidar.dostap.presentation.models.EventCardData
 import org.jetbrains.compose.resources.painterResource
 
 class EventMainScreen:Screen {
-    val event1 = EventCard(
+    val event1 = EventCardData(
         title = "Aliya Aliyeva's Art exhibition",
         location = "Korme Exhibition Center",
         time = "19:00",
@@ -61,7 +62,7 @@ class EventMainScreen:Screen {
                 "Join us for an unforgettable experience as we celebrate the artistic brilliance of Aliya Aliyeva.",
         image = "https://plus.unsplash.com/premium_photo-1722169882213-4aac70efe459?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     )
-    val event2 = EventCard(
+    val event2 = EventCardData(
         title = "Stand-up by Nurlan Saburov",
         location = "Bar Nazvaniye, Astana",
         time = "20:30",
@@ -71,7 +72,7 @@ class EventMainScreen:Screen {
         description = "",
         image = "https://plus.unsplash.com/premium_photo-1722169882213-4aac70efe459?q=80&w=3387&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     )
-    val event3 = EventCard(
+    val event3 = EventCardData(
         title = "The Intellectual Quiz",
         location = "Jepara, Central Java",
         time = "17:00",
@@ -112,7 +113,7 @@ class EventMainScreen:Screen {
                         Spacer(modifier = Modifier.size(10.dp))
                         EventCard(event3)
                         Spacer(modifier = Modifier.size(10.dp))
-                        SeeAll(onClick = {})
+                        SecondaryButton(onClick = {}, text = "See All", trailingIcon = Res.drawable.arrow_right)
                         Spacer(modifier = Modifier.size(10.dp))
                         Row(modifier = Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.Start) {
                             Icon(painter = painterResource(Res.drawable.my_events), "", modifier = Modifier.size(24.dp))
