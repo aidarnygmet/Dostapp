@@ -1,4 +1,4 @@
-package kz.aidar.dostap.presentation.screens.screens
+package kz.aidar.dostap.presentation.screens.screens.event_tab
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

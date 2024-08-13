@@ -1,4 +1,4 @@
-package kz.aidar.dostap.presentation.screens.screens
+package kz.aidar.dostap.presentation.screens.screens.event_tab
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -62,7 +62,7 @@ import kz.aidar.dostap.presentation.models.EventCard
 import kz.aidar.dostap.presentation.screens.bottom_sheets.JoinEventBottomSheet
 import org.jetbrains.compose.resources.painterResource
 
-class EventScreen(eventCard: EventCard, primaryNavigator: Navigator): Screen {
+class ExpandedEventScreen(eventCard: EventCard, primaryNavigator: Navigator): Screen {
     private val localEvent = eventCard.copy()
     private val navigator = primaryNavigator
     @OptIn(ExperimentalMaterialApi::class)

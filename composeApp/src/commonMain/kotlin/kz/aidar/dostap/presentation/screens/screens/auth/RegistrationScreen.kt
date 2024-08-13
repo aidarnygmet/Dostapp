@@ -1,4 +1,4 @@
-package kz.aidar.dostap.presentation.screens.screens
+package kz.aidar.dostap.presentation.screens.screens.auth
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -35,6 +35,7 @@ import kz.aidar.dostap.presentation.auth_components.LabelText
 import kz.aidar.dostap.presentation.auth_components.PrimaryButton
 import kz.aidar.dostap.presentation.auth_components.PrimaryTextInput
 import kz.aidar.dostap.presentation.auth_components.RegistrationScreenTemplate
+import kz.aidar.dostap.presentation.screens.screens.auth.AdditionalInfoScreen
 
 class RegistrationScreen: Screen {
     @Composable

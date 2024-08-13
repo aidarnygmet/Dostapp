@@ -7,7 +7,7 @@ import cafe.adriel.voyager.navigator.tab.TabOptions
 import cafe.adriel.voyager.transitions.SlideTransition
 import dostap.composeapp.generated.resources.Res
 import dostap.composeapp.generated.resources.events_tab_icon
-import kz.aidar.dostap.presentation.screens.screens.EventMainScreen
+import kz.aidar.dostap.presentation.screens.screens.event_tab.EventMainScreen
 import org.jetbrains.compose.resources.painterResource
 
 object EventsTab : Tab {

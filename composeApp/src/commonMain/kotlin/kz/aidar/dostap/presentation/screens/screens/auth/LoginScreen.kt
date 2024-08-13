@@ -1,4 +1,4 @@
-package kz.aidar.dostap.presentation.screens.screens
+package kz.aidar.dostap.presentation.screens.screens.auth
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -28,6 +28,7 @@ import kz.aidar.dostap.presentation.auth_components.PrimaryButton
 import kz.aidar.dostap.presentation.auth_components.PrimaryTextInput
 import kz.aidar.dostap.presentation.auth_components.RegistrationScreenTemplate
 import kz.aidar.dostap.presentation.auth_components.SecondaryButton
+import kz.aidar.dostap.presentation.screens.screens.MainScreen
 
 class LoginScreen:Screen {
     @Composable

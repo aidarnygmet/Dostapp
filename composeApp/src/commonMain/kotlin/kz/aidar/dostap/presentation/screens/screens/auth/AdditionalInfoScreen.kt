@@ -1,4 +1,4 @@
-package kz.aidar.dostap.presentation.screens.screens
+package kz.aidar.dostap.presentation.screens.screens.auth
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Spacer

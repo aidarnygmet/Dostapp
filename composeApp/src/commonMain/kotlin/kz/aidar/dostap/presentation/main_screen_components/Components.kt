@@ -37,7 +37,7 @@ import dostap.composeapp.generated.resources.Res
 import dostap.composeapp.generated.resources.arrow_right
 import dostap.composeapp.generated.resources.user
 import kz.aidar.dostap.presentation.models.EventCard
-import kz.aidar.dostap.presentation.screens.screens.EventScreen
+import kz.aidar.dostap.presentation.screens.screens.event_tab.ExpandedEventScreen
 import org.jetbrains.compose.resources.DrawableResource
 import org.jetbrains.compose.resources.painterResource
 
@@ -50,7 +50,7 @@ fun EventCard(event: EventCard){
         .clip(RoundedCornerShape(10.dp))
         .background(Color.White)
         .clickable {
-            navigator?.push(EventScreen(event, navigator))
+            navigator?.push(ExpandedEventScreen(event, navigator))
         }
         .padding(16.dp),
         horizontalArrangement = Arrangement.SpaceBetween
