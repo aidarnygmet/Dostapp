@@ -1,4 +1,4 @@
-package kz.aidar.dostap.presentation.screens
+package kz.aidar.dostap.presentation.screens.bottom_sheets
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement

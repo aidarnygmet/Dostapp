@@ -3,11 +3,9 @@ package kz.aidar.dostap
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.*
 import androidx.compose.ui.graphics.Color
-import cafe.adriel.voyager.core.annotation.InternalVoyagerApi
 import cafe.adriel.voyager.navigator.Navigator
 
-import kz.aidar.dostap.presentation.screens.AYFNUScreen
-import kz.aidar.dostap.presentation.screens.MainScreen
+import kz.aidar.dostap.presentation.screens.screens.MainScreen
 
 
 @Composable

@@ -1,29 +1,29 @@
-package kz.aidar.dostap.presentation.screens
+package kz.aidar.dostap.presentation.screens.tabs
 
 import androidx.compose.material.Text
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.Face
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.navigator.tab.Tab
 import cafe.adriel.voyager.navigator.tab.TabOptions
 import dostap.composeapp.generated.resources.Res
+import dostap.composeapp.generated.resources.chats_tab_icon
 import dostap.composeapp.generated.resources.events_tab_icon
-import dostap.composeapp.generated.resources.user
 import org.jetbrains.compose.resources.painterResource
 
-object ProfileTab:Tab {
+object ChatsTab:Tab {
     @Composable
     override fun Content() {
-        Text("Profile")
+        Text("Chats")
     }
 
     override val options: TabOptions
         @Composable
         get() = TabOptions(
-            index = 3u,
-            title = "Profile",
-            icon = painterResource(Res.drawable.user)
+            index = 2u,
+            title = "Chats",
+            icon = painterResource(Res.drawable.chats_tab_icon)
         )
 }

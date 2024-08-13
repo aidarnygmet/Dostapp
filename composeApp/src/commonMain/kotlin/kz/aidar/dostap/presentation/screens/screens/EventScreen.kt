@@ -1,4 +1,4 @@
-package kz.aidar.dostap.presentation.screens
+package kz.aidar.dostap.presentation.screens.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -40,13 +40,11 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import cafe.adriel.voyager.core.screen.Screen
-import cafe.adriel.voyager.navigator.LocalNavigator
 import cafe.adriel.voyager.navigator.Navigator
 import cafe.adriel.voyager.navigator.bottomSheet.BottomSheetNavigator
 import cafe.adriel.voyager.navigator.bottomSheet.LocalBottomSheetNavigator
 import coil3.compose.AsyncImage
 import dostap.composeapp.generated.resources.Res
-import dostap.composeapp.generated.resources.arrow_right
 import dostap.composeapp.generated.resources.back_button
 import dostap.composeapp.generated.resources.calendar
 import dostap.composeapp.generated.resources.location
@@ -55,18 +53,13 @@ import dostap.composeapp.generated.resources.shield_button
 import dostap.composeapp.generated.resources.time
 import dostap.composeapp.generated.resources.upload_button
 import dostap.composeapp.generated.resources.user
-import kotlinx.datetime.Instant
 import kotlinx.datetime.LocalDate
-import kotlinx.datetime.LocalDateTime
-import kotlinx.datetime.format.DateTimeFormat
-import kotlinx.datetime.format.DateTimeFormatBuilder
 import kotlinx.datetime.format.char
-import kz.aidar.dostap.presentation.auth_components.LabelText
 import kz.aidar.dostap.presentation.auth_components.PrimaryButton
 import kz.aidar.dostap.presentation.auth_components.SecondaryButton
 import kz.aidar.dostap.presentation.main_screen_components.InfoCard
-import kz.aidar.dostap.presentation.main_screen_components.SeeAll
 import kz.aidar.dostap.presentation.models.EventCard
+import kz.aidar.dostap.presentation.screens.bottom_sheets.JoinEventBottomSheet
 import org.jetbrains.compose.resources.painterResource
 
 class EventScreen(eventCard: EventCard, primaryNavigator: Navigator): Screen {
