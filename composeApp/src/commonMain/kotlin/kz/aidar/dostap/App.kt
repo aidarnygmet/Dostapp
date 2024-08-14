@@ -28,7 +28,7 @@ fun App() {
     ) {
         Navigator(
             screen = MainScreen(),
-            onBackPressed = {currentScreen ->  
+            onBackPressed = {
                 true
             },
         )

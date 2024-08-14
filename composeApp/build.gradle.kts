@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsCompose)
     alias(libs.plugins.compose.compiler)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 kotlin {
@@ -48,11 +49,19 @@ kotlin {
             implementation(libs.voyager.tabNavigator)
             implementation(libs.voyager.bottomSheetNavigator)
             implementation(libs.voyager.transitions)
+            implementation(libs.voyager.screenModel)
+            implementation(libs.voyager.livedata)
+            implementation(libs.voyager.hilt)
             implementation(libs.coil.core)
             implementation(libs.coil.compose)
             implementation(libs.coil.network.ktor)
             implementation(libs.coil.kmp)
             implementation(libs.kotlinx.datetime)
+            implementation(libs.ktor.core)
+            implementation(libs.ktor.content.negotiation)
+            implementation(libs.ktor.auth)
+            implementation(libs.ktor.logging)
+            implementation(libs.ktor.serialization)
         }
         iosMain.dependencies {
             implementation(libs.ktor.ios)
