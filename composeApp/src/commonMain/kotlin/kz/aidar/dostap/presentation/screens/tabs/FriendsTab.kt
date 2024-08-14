@@ -10,6 +10,7 @@ import cafe.adriel.voyager.navigator.tab.Tab
 import cafe.adriel.voyager.navigator.tab.TabOptions
 import dostap.composeapp.generated.resources.Res
 import dostap.composeapp.generated.resources.events_tab_icon
+import dostap.composeapp.generated.resources.friends
 import dostap.composeapp.generated.resources.friends_tab_icon
 import org.jetbrains.compose.resources.painterResource
 

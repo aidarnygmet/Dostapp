@@ -10,10 +10,14 @@ import cafe.adriel.voyager.navigator.tab.Tab
 import cafe.adriel.voyager.navigator.tab.TabOptions
 import dostap.composeapp.generated.resources.Res
 import dostap.composeapp.generated.resources.events_tab_icon
+import dostap.composeapp.generated.resources.profile
 import dostap.composeapp.generated.resources.user
+import org.jetbrains.compose.resources.StringResource
+import org.jetbrains.compose.resources.getString
 import org.jetbrains.compose.resources.painterResource
 
 object ProfileTab:Tab {
+
     @Composable
     override fun Content() {
         Text("Profile")
@@ -26,4 +30,5 @@ object ProfileTab:Tab {
             title = "Profile",
             icon = painterResource(Res.drawable.user)
         )
+
 }

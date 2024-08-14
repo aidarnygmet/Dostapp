@@ -21,14 +21,19 @@ import dostap.composeapp.generated.resources.Res
 import dostap.composeapp.generated.resources.age
 import dostap.composeapp.generated.resources.arrow_right
 import dostap.composeapp.generated.resources.clear
+import dostap.composeapp.generated.resources.confirm
 import dostap.composeapp.generated.resources.gender
+import dostap.composeapp.generated.resources.name
+import dostap.composeapp.generated.resources.tell_about_self
 import dostap.composeapp.generated.resources.user
+import dostap.composeapp.generated.resources.username
 import kz.aidar.dostap.presentation.components.LabelText
 import kz.aidar.dostap.presentation.components.PrimaryButton
 import kz.aidar.dostap.presentation.components.PrimaryTextInput
 import kz.aidar.dostap.presentation.components.RegistrationScreenTemplate
 
 class AdditionalInfoScreen:Screen {
+
     @Composable
     override fun Content() {
         var name by remember {
@@ -50,36 +55,36 @@ class AdditionalInfoScreen:Screen {
                     navigator.pop()
                 })
                 Spacer(Modifier.size(16.dp))
-                LabelText("Tell us about yourself")
+                LabelText(Res.string.tell_about_self)
                 Spacer(Modifier.size(16.dp))
                 PrimaryTextInput(value = name, onValueChanged = {Res.drawable.clear
                     name = it
-                }, label = "Name", trailingIcon = Res.drawable.clear, leadingIcon = Res.drawable.user, onTrailingIconClicked = {
+                }, label = Res.string.name, trailingIcon = Res.drawable.clear, leadingIcon = Res.drawable.user, onTrailingIconClicked = {
                     name = ""
                 }, modifier = Modifier.fillMaxWidth())
                 Spacer(Modifier.size(16.dp))
                 PrimaryTextInput(value = username, onValueChanged = {
                     username = it
-                }, label = "Username", trailingIcon = Res.drawable.clear, leadingIcon = Res.drawable.user, onTrailingIconClicked = {
+                }, label = Res.string.username, trailingIcon = Res.drawable.clear, leadingIcon = Res.drawable.user, onTrailingIconClicked = {
                     username = ""
                 }, modifier = Modifier.fillMaxWidth())
                 Spacer(Modifier.size(16.dp))
                 PrimaryTextInput(value = gender, onValueChanged = {
                     gender = it
-                }, label = "Gender", trailingIcon = Res.drawable.clear, leadingIcon = Res.drawable.gender, onTrailingIconClicked = {
+                }, label = Res.string.gender, trailingIcon = Res.drawable.clear, leadingIcon = Res.drawable.gender, onTrailingIconClicked = {
                     gender = ""
                 }, modifier = Modifier.fillMaxWidth())
                 Spacer(Modifier.size(16.dp))
                 PrimaryTextInput(value = age, onValueChanged = {
                     age = it
-                }, label = "Age", trailingIcon = Res.drawable.clear, leadingIcon = Res.drawable.age, onTrailingIconClicked = {
+                }, label = Res.string.age, trailingIcon = Res.drawable.clear, leadingIcon = Res.drawable.age, onTrailingIconClicked = {
                     age = ""
                 }, modifier = Modifier.fillMaxWidth())
             }
         ){
             PrimaryButton(onClick = {
                 navigator.push(AYFNUScreen())
-            }, text = "Confirm", trailingIcon = Res.drawable.arrow_right, modifier = Modifier.fillMaxWidth())
+            }, text = Res.string.confirm, trailingIcon = Res.drawable.arrow_right, modifier = Modifier.fillMaxWidth())
         }
     }
 }

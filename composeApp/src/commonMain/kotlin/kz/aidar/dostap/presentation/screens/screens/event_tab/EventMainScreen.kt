@@ -10,14 +10,11 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.Button
-import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
@@ -29,24 +26,30 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import cafe.adriel.voyager.core.screen.Screen
+import dostap.composeapp.generated.resources.Nunito_ExtraBold
+import dostap.composeapp.generated.resources.Nunito_Variable
 import dostap.composeapp.generated.resources.Res
-import dostap.composeapp.generated.resources.aliya_event
 import dostap.composeapp.generated.resources.arrow_right
 import dostap.composeapp.generated.resources.background
 import dostap.composeapp.generated.resources.fire
+import dostap.composeapp.generated.resources.interesting_now
 import dostap.composeapp.generated.resources.my_events
-import dostap.composeapp.generated.resources.puzzle
 import dostap.composeapp.generated.resources.search
-import dostap.composeapp.generated.resources.standup
+import dostap.composeapp.generated.resources.search_event
+import dostap.composeapp.generated.resources.see_all
 import kz.aidar.dostap.presentation.components.EventCard
 import kz.aidar.dostap.presentation.components.SecondaryButton
-import kz.aidar.dostap.presentation.components.SeeAll
 import kz.aidar.dostap.presentation.models.EventCardData
+import org.jetbrains.compose.resources.Font
+import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.resources.stringResource
 
 class EventMainScreen:Screen {
     val event1 = EventCardData(
@@ -88,6 +91,7 @@ class EventMainScreen:Screen {
             Color(0x009A56FF)
         )
     )
+
     @Composable
     override fun Content() {
         Box(modifier = Modifier.fillMaxSize().background(Color(0xFFF7F7F7)).padding(bottom = 56.dp).verticalScroll(
@@ -104,7 +108,7 @@ class EventMainScreen:Screen {
                         Row(modifier = Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.Start) {
                             Icon(painter = painterResource(Res.drawable.fire), "", modifier = Modifier.size(24.dp))
                             Spacer(modifier = Modifier.size(10.dp))
-                            EventsScrenLabelText("Interesting Now")
+                            EventsScreenLabelText(Res.string.interesting_now)
                         }
                         Spacer(modifier = Modifier.size(16.dp))
                         EventCard(event1)
@@ -113,12 +117,12 @@ class EventMainScreen:Screen {
                         Spacer(modifier = Modifier.size(10.dp))
                         EventCard(event3)
                         Spacer(modifier = Modifier.size(10.dp))
-                        SecondaryButton(onClick = {}, text = "See All", trailingIcon = Res.drawable.arrow_right)
+                        SecondaryButton(onClick = {}, text = Res.string.see_all, trailingIcon = Res.drawable.arrow_right)
                         Spacer(modifier = Modifier.size(10.dp))
                         Row(modifier = Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.Start) {
                             Icon(painter = painterResource(Res.drawable.my_events), "", modifier = Modifier.size(24.dp))
                             Spacer(modifier = Modifier.size(10.dp))
-                            EventsScrenLabelText("My events")
+                            EventsScreenLabelText2(Res.string.my_events)
                         }
                     }
                 }
@@ -127,8 +131,12 @@ class EventMainScreen:Screen {
         }
     }
     @Composable
-    fun EventsScrenLabelText(text:String, color: Color = Color.Black){
-        Text(text, color = color, fontWeight = FontWeight.Bold, fontSize = 27.sp)
+    fun EventsScreenLabelText(text:StringResource, color: Color = Color.Black){
+        Text(stringResource(text), color = color, fontWeight = FontWeight.Bold, fontSize = 24.sp, fontFamily = FontFamily(Font(resource = Res.font.Nunito_ExtraBold)))
+    }
+    @Composable
+    fun EventsScreenLabelText2(text:StringResource, color: Color = Color.Black){
+        Text(stringResource(text), color = color, fontWeight = FontWeight.ExtraBold, fontSize = 24.sp, fontFamily = FontFamily(Font(resource = Res.font.Nunito_Variable)))
     }
     @Composable
     fun SearchInput(
@@ -140,8 +148,8 @@ class EventMainScreen:Screen {
             onValueChange = onValueChanged,
             modifier = modifier,leadingIcon = { Icon(painterResource(Res.drawable.search), contentDescription = "", tint = MaterialTheme.colors.primaryVariant) },
             shape = RoundedCornerShape(16.dp),
-            label = { Text("Search", color = Color(0xFFB1B1B1)) },
-            placeholder = { Text("Search", color = Color(0xFFB1B1B1)) },
+            label = { Text(stringResource(Res.string.search_event), color = Color(0xFFB1B1B1)) },
+            placeholder = { Text(stringResource(Res.string.search_event), color = Color(0xFFB1B1B1)) },
             colors = TextFieldDefaults.textFieldColors(
                 backgroundColor = Color.White,
                 textColor = Color.Black,

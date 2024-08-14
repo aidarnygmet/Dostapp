@@ -43,7 +43,10 @@ import dostap.composeapp.generated.resources.user
 import kz.aidar.dostap.presentation.models.EventCardData
 import kz.aidar.dostap.presentation.screens.screens.event_tab.ExpandedEventScreen
 import org.jetbrains.compose.resources.DrawableResource
+import org.jetbrains.compose.resources.InternalResourceApi
+import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.painterResource
+import org.jetbrains.compose.resources.stringResource
 
 @Composable
 fun EventCard(event: EventCardData){
@@ -95,22 +98,7 @@ fun InfoCard(icon: DrawableResource, text: String){
         Text(text)
     }
 }
-@Composable
-fun SeeAll(onClick: ()->Unit, modifier: Modifier = Modifier){
-    Button(
-        onClick = onClick,
-        modifier = modifier.height(33.dp),
-        shape = RoundedCornerShape(8.dp),
-        colors = ButtonDefaults.buttonColors(
-            backgroundColor = MaterialTheme.colors.secondary,
-            contentColor = Color.White
-        ),
-        elevation = ButtonDefaults.elevation(0.dp)
-    ){
-        Text(text = "See all", fontWeight = FontWeight.SemiBold, fontSize = 16.sp,color = MaterialTheme.colors.primary)
-        Icon(painterResource(Res.drawable.arrow_right), contentDescription = "", tint = MaterialTheme.colors.primary, modifier = Modifier.size(30.dp))
-    }
-}
+
 @Composable
 fun BoxScope.ParticipantsCountIndicator(count: Int, total:Int){
     Row(
@@ -126,10 +114,11 @@ fun BoxScope.ParticipantsCountIndicator(count: Int, total:Int){
         Text(text = "$count/$total", color = Color.White, fontSize = 13.sp)
     }
 }
+@OptIn(InternalResourceApi::class)
 @Composable
 fun PrimaryButton(
     onClick: ()->Unit,
-    leadingIcon:  DrawableResource? = null, trailingIcon: DrawableResource? = null, text: String, modifier: Modifier = Modifier){
+    leadingIcon:  DrawableResource? = null, trailingIcon: DrawableResource? = null, text: StringResource, modifier: Modifier = Modifier){
     Button(
         onClick = onClick,
         modifier = modifier.height(50.dp),
@@ -144,7 +133,7 @@ fun PrimaryButton(
             Icon(painter = painterResource(leadingIcon), contentDescription = "", tint = Color.White, modifier = Modifier.size(24.dp))
             Spacer(modifier = Modifier.size(10.dp))
         }
-        Text(text = text, fontWeight = FontWeight.SemiBold, fontSize = 16.sp)
+        Text(text = stringResource(text), fontWeight = FontWeight.SemiBold, fontSize = 16.sp)
         if (trailingIcon != null) {
             Spacer(modifier = Modifier.size(10.dp))
             Icon(painter = painterResource(trailingIcon), contentDescription = "", tint = Color.White, modifier = Modifier.size(24.dp))
@@ -152,7 +141,7 @@ fun PrimaryButton(
     }
 }
 @Composable
-fun SecondaryButton(onClick: ()->Unit,leadingIcon:  DrawableResource? = null, trailingIcon: DrawableResource? = null, text: String, modifier: Modifier = Modifier){
+fun SecondaryButton(onClick: ()->Unit,leadingIcon:  DrawableResource? = null, trailingIcon: DrawableResource? = null, text: StringResource, modifier: Modifier = Modifier){
     Button(
         onClick = onClick,
         modifier = modifier.height(50.dp),
@@ -167,7 +156,7 @@ fun SecondaryButton(onClick: ()->Unit,leadingIcon:  DrawableResource? = null, tr
             Icon(painterResource(leadingIcon), contentDescription = "", tint = MaterialTheme.colors.primary, modifier = Modifier.size(24.dp))
             Spacer(modifier = Modifier.size(10.dp))
         }
-        Text(text = text, fontWeight = FontWeight.SemiBold, fontSize = 16.sp,color = MaterialTheme.colors.primary)
+        Text(text = stringResource(text), fontWeight = FontWeight.SemiBold, fontSize = 16.sp,color = MaterialTheme.colors.primary)
         if (trailingIcon != null) {
             Icon(painterResource(trailingIcon), contentDescription = "", tint = MaterialTheme.colors.primary, modifier = Modifier.size(24.dp))
             Spacer(modifier = Modifier.size(10.dp))
@@ -181,7 +170,7 @@ fun PrimaryTextInput(
     onValueChanged: (String)->Unit,
     trailingIcon: DrawableResource? = null,
     leadingIcon: DrawableResource? = null,
-    label:String,
+    label:StringResource,
     onTrailingIconClicked: ()->Unit,
     visualTransformation: VisualTransformation = VisualTransformation.None,
     keyboardOptions: KeyboardOptions = KeyboardOptions.Default){
@@ -193,8 +182,8 @@ fun PrimaryTextInput(
             if (trailingIcon != null) {Icon(painterResource(trailingIcon), contentDescription = "", tint = MaterialTheme.colors.secondaryVariant, modifier = Modifier.clickable { onTrailingIconClicked() })}},
         leadingIcon = { if (leadingIcon != null) {Icon(painterResource(leadingIcon), contentDescription = "", tint = MaterialTheme.colors.primaryVariant)}},
         shape = RoundedCornerShape(16.dp),
-        label = {Text(label, color = MaterialTheme.colors.primaryVariant)},
-        placeholder = { Text(label, color = MaterialTheme.colors.primaryVariant) },
+        label = {Text(stringResource(label), color = MaterialTheme.colors.primaryVariant)},
+        placeholder = { Text(stringResource(label), color = MaterialTheme.colors.primaryVariant) },
         colors = TextFieldDefaults.textFieldColors(
             backgroundColor = MaterialTheme.colors.onPrimary,
             textColor = Color.Black,
@@ -207,8 +196,8 @@ fun PrimaryTextInput(
     )
 }
 @Composable
-fun LabelText(text:String, color: Color = Color.Black){
-    Text(text, color = color, fontWeight = FontWeight.Bold, fontSize = 32.sp)
+fun LabelText(text:StringResource, color: Color = Color.Black){
+    Text(stringResource(text), color = color, fontWeight = FontWeight.Bold, fontSize = 32.sp)
 }
 @Composable
 fun RegistrationScreenTemplate(topPart: @Composable ()->Unit, bottomPart: @Composable ()->Unit){

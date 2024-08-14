@@ -9,6 +9,7 @@ import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.navigator.tab.Tab
 import cafe.adriel.voyager.navigator.tab.TabOptions
 import dostap.composeapp.generated.resources.Res
+import dostap.composeapp.generated.resources.chats
 import dostap.composeapp.generated.resources.chats_tab_icon
 import dostap.composeapp.generated.resources.events_tab_icon
 import org.jetbrains.compose.resources.painterResource

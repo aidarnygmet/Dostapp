@@ -28,14 +28,19 @@ import cafe.adriel.voyager.navigator.currentOrThrow
 import dostap.composeapp.generated.resources.Res
 import dostap.composeapp.generated.resources.arrow_right
 import dostap.composeapp.generated.resources.clear
+import dostap.composeapp.generated.resources.confirm_password
+import dostap.composeapp.generated.resources.create_account
+import dostap.composeapp.generated.resources.create_account_button
 import dostap.composeapp.generated.resources.email
 import dostap.composeapp.generated.resources.password
 import dostap.composeapp.generated.resources.password_visible
+import dostap.composeapp.generated.resources.terms_and_conditions
 import kz.aidar.dostap.presentation.components.LabelText
 import kz.aidar.dostap.presentation.components.PrimaryButton
 import kz.aidar.dostap.presentation.components.PrimaryTextInput
 import kz.aidar.dostap.presentation.components.RegistrationScreenTemplate
 import kz.aidar.dostap.presentation.screens.screens.auth.AdditionalInfoScreen
+import org.jetbrains.compose.resources.stringResource
 
 class RegistrationScreen: Screen {
     @Composable
@@ -76,14 +81,14 @@ class RegistrationScreen: Screen {
                 navigator.pop()
             })
             Spacer(Modifier.size(16.dp))
-            LabelText(text = "Let's create your account")
+            LabelText(text = Res.string.create_account)
             Spacer(Modifier.size(16.dp))
             PrimaryTextInput(
                 modifier = Modifier.fillMaxWidth(),
                 value = email,
                 onValueChanged = {
                     email = it
-                }, label = "Email", leadingIcon = Res.drawable.email, trailingIcon = Res.drawable.clear, onTrailingIconClicked = {
+                }, label = Res.string.email, leadingIcon = Res.drawable.email, trailingIcon = Res.drawable.clear, onTrailingIconClicked = {
                     email = ""
                 })
             Spacer(Modifier.size(16.dp))
@@ -92,7 +97,7 @@ class RegistrationScreen: Screen {
                 value = password,
                 onValueChanged = {
                     password = it
-                }, label = "Password", leadingIcon = Res.drawable.password, trailingIcon = Res.drawable.password_visible,
+                }, label = Res.string.password, leadingIcon = Res.drawable.password, trailingIcon = Res.drawable.password_visible,
                 onTrailingIconClicked = {
                     passwordVisibility = !passwordVisibility
                     if(passwordVisibility){
@@ -110,7 +115,7 @@ class RegistrationScreen: Screen {
                 value = confirmPassword,
                 onValueChanged = {
                     confirmPassword = it
-                }, label = "Confirm Password", leadingIcon = Res.drawable.password, trailingIcon = Res.drawable.password_visible,
+                }, label = Res.string.confirm_password, leadingIcon = Res.drawable.password, trailingIcon = Res.drawable.password_visible,
                 onTrailingIconClicked = {
                     confirmVisibility = !confirmVisibility
                     if(confirmVisibility){
@@ -125,12 +130,12 @@ class RegistrationScreen: Screen {
             Spacer(Modifier.size(16.dp))
             Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
                 Checkbox(checked = checked, onCheckedChange = {checked = it})
-                Text("I agree to the use and processing of the data")
+                Text(stringResource(Res.string.terms_and_conditions))
             }
         }){
             PrimaryButton(modifier = Modifier.fillMaxWidth(), onClick = {
                 navigator.push(AdditionalInfoScreen())
-            }, text = "Create an account", trailingIcon = Res.drawable.arrow_right)
+            }, text = Res.string.create_account_button, trailingIcon = Res.drawable.arrow_right)
         }
     }
 }

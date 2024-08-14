@@ -30,6 +30,10 @@ import dostap.composeapp.generated.resources.Res
 import dostap.composeapp.generated.resources.arrow_right
 import dostap.composeapp.generated.resources.clear
 import dostap.composeapp.generated.resources.email
+import dostap.composeapp.generated.resources.forgot_password
+import dostap.composeapp.generated.resources.log_in
+import dostap.composeapp.generated.resources.nice_to_see
+import dostap.composeapp.generated.resources.no_account
 import dostap.composeapp.generated.resources.password
 import kz.aidar.dostap.presentation.components.LabelText
 import kz.aidar.dostap.presentation.components.PrimaryButton
@@ -59,13 +63,13 @@ class LoginScreen:Screen {
         val navigator = LocalNavigator.currentOrThrow
         RegistrationScreenTemplate(
             topPart = {
-                LabelText("Nice to see you again")
+                LabelText(Res.string.nice_to_see)
                 Spacer(Modifier.size(16.dp))
                 PrimaryTextInput(
                     modifier = Modifier.fillMaxWidth(), value = email, onValueChanged = {
                     email = it
                 },
-                    leadingIcon = Res.drawable.email, trailingIcon = Res.drawable.clear, label = "Email address", onTrailingIconClicked = {
+                    leadingIcon = Res.drawable.email, trailingIcon = Res.drawable.clear, label = Res.string.email, onTrailingIconClicked = {
                     email = ""
                 })
                 Spacer(Modifier.size(16.dp))
@@ -74,7 +78,7 @@ class LoginScreen:Screen {
                     value = password,
                     onValueChanged = {
                         password = it
-                    }, label = "Password", leadingIcon = Res.drawable.password, trailingIcon = Res.drawable.clear,
+                    }, label = Res.string.password, leadingIcon = Res.drawable.password, trailingIcon = Res.drawable.clear,
                     onTrailingIconClicked = {
                         passwordVisibility = !passwordVisibility
                         if(passwordVisibility){
@@ -96,7 +100,7 @@ class LoginScreen:Screen {
                                 fontWeight = FontWeight.Bold
                             )
                         ){
-                            append("Forgot password?")
+                            append("Forgot Password?")
                         }
                     }
                 ){
@@ -107,11 +111,11 @@ class LoginScreen:Screen {
             bottomPart = {
                 PrimaryButton(modifier = Modifier.fillMaxWidth(), onClick = {
                     navigator.push(MainScreen())
-                }, text = "Log in", trailingIcon = Res.drawable.arrow_right)
+                }, text = Res.string.log_in, trailingIcon = Res.drawable.arrow_right)
                 Spacer(Modifier.size(16.dp))
                 SecondaryButton(modifier = Modifier.fillMaxWidth(), onClick = {
                     navigator.push(RegistrationScreen())
-                }, text = "I don't have an account")
+                }, text = Res.string.no_account)
         })
     }
 }

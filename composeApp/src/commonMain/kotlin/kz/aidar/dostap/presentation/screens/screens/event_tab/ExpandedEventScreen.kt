@@ -47,8 +47,12 @@ import coil3.compose.AsyncImage
 import dostap.composeapp.generated.resources.Res
 import dostap.composeapp.generated.resources.back_button
 import dostap.composeapp.generated.resources.calendar
+import dostap.composeapp.generated.resources.join_event
 import dostap.composeapp.generated.resources.location
+import dostap.composeapp.generated.resources.participants_coming
 import dostap.composeapp.generated.resources.plus
+import dostap.composeapp.generated.resources.read_all
+import dostap.composeapp.generated.resources.see_all
 import dostap.composeapp.generated.resources.shield_button
 import dostap.composeapp.generated.resources.time
 import dostap.composeapp.generated.resources.upload_button
@@ -123,7 +127,7 @@ class ExpandedEventScreen(eventCard: EventCardData, primaryNavigator: Navigator)
                     fontWeight = FontWeight.Bold
                 )
             ) {
-                append("Read All")
+                append("Read all")
             }
         }
         Column(modifier = Modifier.fillMaxWidth().padding(25.dp)) {
@@ -140,7 +144,7 @@ class ExpandedEventScreen(eventCard: EventCardData, primaryNavigator: Navigator)
             BottomSheetNavigator {
                 PrimaryButton(onClick = {
                     bottomSheetNavigator.show(JoinEventBottomSheet(localEvent))
-                }, leadingIcon = Res.drawable.plus, text = "Join the event", modifier = Modifier.fillMaxWidth())
+                }, leadingIcon = Res.drawable.plus, text = Res.string.join_event, modifier = Modifier.fillMaxWidth())
             }
 
         }
@@ -148,7 +152,7 @@ class ExpandedEventScreen(eventCard: EventCardData, primaryNavigator: Navigator)
     @Composable
     private fun Participants(){
         Column(modifier = Modifier.fillMaxWidth(), horizontalAlignment = Alignment.Start) {
-            Text(text = "${localEvent.participantsCount} guys are coming", fontWeight = FontWeight.Bold, fontSize = 20.sp)
+            Text(text = "${localEvent.participantsCount} ${Res.string.participants_coming}", fontWeight = FontWeight.Bold, fontSize = 20.sp)
             Spacer(Modifier.size(12.dp))
             Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically){
                 Row(verticalAlignment = Alignment.CenterVertically) {
@@ -172,7 +176,7 @@ class ExpandedEventScreen(eventCard: EventCardData, primaryNavigator: Navigator)
                     }
                 }
                 if (localEvent.participantsCount>3){
-                    SecondaryButton(onClick = {}, text = "See all", modifier = Modifier)
+                    SecondaryButton(onClick = {}, text = Res.string.see_all, modifier = Modifier)
                 }
             }
         }
